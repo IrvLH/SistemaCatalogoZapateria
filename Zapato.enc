@@ -1,0 +1,70 @@
+drop database Zapato;
+create database Zapato;
+use Zapato;
+
+create table almacen(
+idAlmacen varchar(20) not null,
+ubicacion varchar(40) not null,
+nombre varchar(30),
+inventario varchar(40),
+primary key(idAlmacen));
+
+create table zapato(
+idInv varchar(20) not null,
+tipo varchar(20) not null,
+marca varchar(40) not null,
+numero varchar(10) not null,
+descripcion varchar(20),
+temporada varchar(20),
+color varchar(20),
+precio varchar(20),
+primary key(idInv, tipo));
+
+create table empleado(
+idEmpledo varchar(20) not null,
+usuario varchar(20) not null,
+contraseña varchar(20),
+nombres varchar(40),
+apellidos varchar(40),
+edad varchar(20),
+primary key(idEmpledo));
+
+create table sucursal(
+idSucursal varchar(20),
+telefono varchar(20),
+direccion varchar(20),
+primary key (idSucursal));
+
+create table venta(
+nombre varchar(100),
+cantPro int,
+monto int);
+
+insert into almacen (idAlmacen, ubicacion, nombre, inventario) values ('1', 'Merida', 'Zapato', '01');
+insert into almacen (idAlmacen, ubicacion, nombre, inventario) values ('2', 'Puebla', 'Zapato', '02');
+insert into almacen (idAlmacen, ubicacion, nombre, inventario) values ('3', 'Mexico', 'Zapato', '03');
+
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('01', 'Tenni', 'Vans', '25', 'Unisex', 'Primavera','Azul', '800');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('01', 'Zapatilla', 'Converse', '24', 'Femenino', 'Primavera','Rojo', '1200');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('01', 'Zapato', 'Adidas', '27', 'Masculino', 'Otoño','Negro', '900');
+
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('02', 'Tenni', 'Adidas', '25', 'Unisex', 'Primavera','Amarillo', '800');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('02', 'Zapatilla', 'Hugges Puppies', '23', 'Femeninio', 'Otoño','Magenta', '1000');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('02', 'Zapato', 'CAT', '26', 'Masculino', 'Otoño','Naranja', '1050');
+
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('03', 'Zapatilla', 'Adidas', '24', 'Femenino', 'Primavera','Negro', '1200');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('03', 'Tenni', 'Converse', '22', 'Femenino', 'Invierno','Verde', '850');
+insert into zapato (idInv, tipo, marca, numero, descripcion, temporada, color, precio) values ('03', 'Zapato', 'Jeep', '27', 'Masculino', 'Otoño','Lila', '900');
+
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('11','100','100','JUAN','CASTILLO','24');
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('1','101','101','Pedro','Aleman','20');
+
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('22','102','102','PERLA','ZARATE','22');
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('2','103','103','Jose','Jimenez','29');
+
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('33','104','104','GASTON','HERNANDEZ','26');
+insert into empleado(idEmpledo, usuario, contraseña, nombres, apellidos, edad) values ('3','105','105','Alberto','Blanco','19');
+
+insert into sucursal (idSucursal, telefono, direccion) values ('11','2291024585','Av. Americas'); 
+insert into sucursal (idSucursal, telefono, direccion) values ('22','2281054458','Revolucion '); 
+insert into sucursal (idSucursal, telefono, direccion) values ('33','2961072564','20 de Noviembre'); 
